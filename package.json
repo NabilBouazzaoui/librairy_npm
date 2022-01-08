@@ -1,0 +1,19 @@
+{
+  "name": "librairy_npm",
+  "version": "1.0.0",
+  "description": "librairy_npm pour le storybook version 0 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NabilBouazzaoui/librairy_npm.git"
+  },
+  "author": "Nabil_Emeline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NabilBouazzaoui/librairy_npm/issues"
+  },
+  "homepage": "https://github.com/NabilBouazzaoui/librairy_npm#readme"
+}
