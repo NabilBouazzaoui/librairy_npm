@@ -6,7 +6,7 @@ import './bread.css';
 export function Breadcrumbs(...props){
     return(
         <Breadcrumb>
-        <Breadcrumb.Item><a href="">Accueil</a></Breadcrumb.Item>
+        <Breadcrumb.Item><a href="#">Accueil</a></Breadcrumb.Item>
         <Breadcrumb.Item>
           <a href="">Lorem</a>
         </Breadcrumb.Item>
@@ -18,10 +18,10 @@ export function Breadcrumbs(...props){
 export function BreadcrumbIcons(...props){
     return(
         <Breadcrumb>
-    <Breadcrumb.Item href="#">
+    <Breadcrumb.Item href="">
       <HomeOutlined />
     </Breadcrumb.Item>
-    <Breadcrumb.Item href="#">
+    <Breadcrumb.Item href="">
       <QqOutlined />
       <span>Lorem</span>
     </Breadcrumb.Item>
