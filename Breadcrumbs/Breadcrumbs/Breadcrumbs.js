@@ -18,10 +18,10 @@ export function Breadcrumbs(...props){
 export function BreadcrumbIcons(...props){
     return(
         <Breadcrumb>
-    <Breadcrumb.Item href="">
+    <Breadcrumb.Item href="#">
       <HomeOutlined />
     </Breadcrumb.Item>
-    <Breadcrumb.Item href="">
+    <Breadcrumb.Item href="#">
       <QqOutlined />
       <span>Lorem</span>
     </Breadcrumb.Item>
