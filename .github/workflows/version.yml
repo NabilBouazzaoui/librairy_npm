@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'     
+        description: 'version manager'     
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+        default: 'run'
   push:
     branches:
       - master

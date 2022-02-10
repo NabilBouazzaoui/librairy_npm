@@ -4,12 +4,12 @@
   "description": "librairy_npm pour le storybook version 0 ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "APP_VERSION=$npm_package_version react-scripts build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NabilBouazzaoui/librairy_npm.git",
-    "build": "APP_VERSION=$npm_package_version react-scripts build"
+    "url": "git+https://github.com/NabilBouazzaoui/librairy_npm.git"
   },
   "author": "Nabil_Emeline",
   "license": "ISC",
