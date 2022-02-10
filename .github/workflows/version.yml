@@ -25,6 +25,5 @@ jobs:
       - run: git config --global user.email 'nabilbouazzaoui62@gmail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: npm ci
-      - run: npm run build
       - run: git push
  
