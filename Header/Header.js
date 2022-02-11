@@ -15,7 +15,7 @@ export function Header({...props}) {
 
       return (
           <h1 className='header'>
-           Hello Header
+           Hello World!
           </h1>
         );
       }; 

@@ -1,29 +1,23 @@
-name: NPM Version Manager
+# Name for the github action
+name: Push to Master
 
+# Trigger this action when we push to master or merge a pull-request to master
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'version manager'     
-        required: true
-        default: 'run'
   push:
     branches:
       - master
+
+# runs the jobs
 jobs:
-  version:
+  build:
+    # runs on ubuntu
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
+      # checkout to github
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org'
-          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-      - run: git config --global user.name 'NabilBouazzaoui'
-      - run: git config --global user.email 'nabilbouazzaoui62@gmail.com'
-      - run: npm version patch -m "[RELEASE] %s"
-      - run: npm ci
-      - run: git push
- 
+      # semantic release action from third party
+      - uses: codfish/semantic-release-action@master
+    # Add the environment variable for NPM and github. Github is needed because semantic-release will create a new release and release notes automatically
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
