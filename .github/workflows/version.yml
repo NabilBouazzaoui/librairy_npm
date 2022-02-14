@@ -1,5 +1,5 @@
 # Name for the github action
-name: Push to Master
+name: Push to Master version manager
 
 # Trigger this action when we push to master or merge a pull-request to master
 on:
@@ -12,12 +12,15 @@ jobs:
   build:
     # runs on ubuntu
     runs-on: ubuntu-latest
-    steps:
-      # checkout to github
-      - uses: actions/checkout@v2
-      # semantic release action from third party
-      - uses: codfish/semantic-release-action@master
+    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     # Add the environment variable for NPM and github. Github is needed because semantic-release will create a new release and release notes automatically
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      # checkout to github
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+      - run: npm version patch -m "[RELEASE] %s"
+      - run: git push
