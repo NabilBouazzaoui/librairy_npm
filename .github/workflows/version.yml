@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+  pul
 
 # runs the jobs
 jobs:
