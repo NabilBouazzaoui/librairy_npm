@@ -1,6 +1,6 @@
 {
   "name": "librairy_npm",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "librairy_npm pour le storybook version 0 ",
   "main": "index.js",
   "scripts": {
