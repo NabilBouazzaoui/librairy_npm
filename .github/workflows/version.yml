@@ -1,24 +1,15 @@
-# Name for the github action
-name: Push to Master version manager
+name: NPM Version Manager
 
-# Trigger this action when we push to master or merge a pull-request to master
 on:
   push:
     branches:
       - master
 
-# runs the jobs
 jobs:
-  build:
-    # runs on ubuntu
+  version:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
-    # Add the environment variable for NPM and github. Github is needed because semantic-release will create a new release and release notes automatically
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      # checkout to github
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
