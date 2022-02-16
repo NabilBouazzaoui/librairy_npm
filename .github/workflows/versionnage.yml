@@ -1,9 +1,10 @@
 name: NPM Version Manager
 
 on:
-  push:
-    branches:
-      - master
+	push:
+		branches: [ master ]
+	pull_request:
+		branches: [ master ]
 
 jobs:
   version:
